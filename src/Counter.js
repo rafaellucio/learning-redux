@@ -1,24 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Counter extends Component {
-  increment = () => {
-    this.props.dispatch({ type: 'INCREMENT' });
-  }
+const Counter = props => (
+  <div>
+    <h2>Counter</h2>
+    <div>
+      <button onClick={props.decrement}>-</button>
+      <span>{props.count}</span>
+      <button onClick={props.increment}>+</button>
+    </div>
+  </div>
+)
 
-  decrement = () => {
-    this.props.dispatch({ type: 'DECREMENT' });
-  }
-
-  render() {
-    return (
-      <div>
-        <h2>Counter</h2>
-        <div>
-          <button onClick={this.decrement}>-</button>
-          <span>{this.props.count}</span>
-          <button onClick={this.increment}>+</button>
-        </div>
-      </div>
-    )
-  }
-}
+export default Counter
